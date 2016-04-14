@@ -2,6 +2,3 @@ language: go
 sudo: false
 go:
     - tip
-script:
-    - cd tests
-    - go test
