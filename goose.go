@@ -5,6 +5,7 @@ import (
     "net/textproto"
 )
 
+/* Goose object */
 type Goose struct{
         Server string
         Port string

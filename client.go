@@ -18,9 +18,20 @@ func (Goose *Goose) Join(c string) (ret bool) {
 }
 
 func (Goose *Goose) Part(c string) (ret bool) {
-    // TODO: part channel
     Goose.Write("PART "+c)
-    // TODO: remove from channels list
+    var Chan int
+    for i := 0; i <= len(Goose.Channels); i++ {
+        if c == Goose.Channels[i] {
+            Chan = i
+        }
+    }
+
+    if (Chan+1) == len(Goose.Channels) {
+        Goose.Channels = Goose.Channels[:Chan]
+    } else {
+        Goose.Channels = append(Goose.Channels[:Chan],Goose.Channels[Chan+1:]...)
+
+    }
     return true
 }
 
@@ -44,10 +55,6 @@ if err != nil{
     var tp *textproto.Reader = textproto.NewReader( reader )
     Goose.Reader = tp
 
-
-  fmt.Println(Goose.Channels[0])
-  Goose.Join("#goose")
-
   return nil, nil
 }
 
@@ -66,3 +73,9 @@ func (Goose *Goose) Pings(line string) {
             Goose.Write("PONG :" + l[1])
         }
 }
+
+func (Goose *Goose) Split(line string, c string) (seg []string) {
+    var l []string = strings.Split(line,c)
+    return l
+}
+
