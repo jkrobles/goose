@@ -2,7 +2,7 @@ package goose_test
 
 import (
     "testing"
-    "goose"
+    "github.com/jkrobles/goose"
 )
 
 
