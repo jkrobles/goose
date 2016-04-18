@@ -7,7 +7,7 @@ Build Status: [![Build Status](https://travis-ci.org/jkrobles/goose.svg?branch=m
 Import goose
 ```go
 import (
-    "goose"
+    "github.com/jkrboles/goose"
 )
 ```
 
