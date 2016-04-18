@@ -1,4 +1,4 @@
-package goose
+package goose_test
 
 import (
     "testing"

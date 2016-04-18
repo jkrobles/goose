@@ -69,7 +69,7 @@ func (Goose *Goose) Reading() (ret bool) {
 func (Goose *Goose) Pings(line string) {
     l := strings.Split(line,":")
         if l[0] == "PING " {
-            fmt.Println("PONG sent\r\n")
+            fmt.Println("PONG sent\r")
             Goose.Write("PONG :" + l[1])
         }
 }
