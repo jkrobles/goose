@@ -74,6 +74,11 @@ func (Goose *Goose) Pings(line string) {
         }
 }
 
+func (Goose *Goose) loop_handler(line string) {
+    // TODO: Check l[0] and if handler is set for that event
+    // TODO: Call handler
+}
+
 func (Goose *Goose) Split(line string, c string) (seg []string) {
     var l []string = strings.Split(line,c)
     return l
